@@ -1,4 +1,16 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
+
+@Component({
+  selector: 'app-root',
+  template: `<p>Hello {{title}} </p>`,
+  styleUrls:[]
+})
+
+export class AppComponent {
+  title: String= 'AppComponent';
+}
+
+/* import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +19,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'firstAngularApp';
-}
+} */
