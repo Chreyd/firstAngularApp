@@ -22,7 +22,7 @@
 
   <!-- -------------------------CARD -->
   <div class="row row-cols-1 row-cols-md-3">
-    <div class="col mb-4" *ngFor="let card of cards">
+    <div class="col mb-4" *ngFor="let card of filteredCards">
       <div class="card">
         <img
           [src]="card.imageUrl"
