@@ -7,13 +7,15 @@ import { FormsModule } from '@angular/forms';
 
 import {registerLocaleData} from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import { ReplaceComma } from './shared/pipes/replaca-comma.pipe';
 /* import fr from '@angular/common/locales/fr';
  */
 registerLocaleData(localeFr, 'fr');
 @NgModule({
   declarations: [
     AppComponent,
-    CardsComponent
+    CardsComponent,
+    ReplaceComma,
   ],
   imports: [
     BrowserModule,

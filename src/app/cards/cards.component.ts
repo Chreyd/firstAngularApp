@@ -59,7 +59,7 @@ export class CardsComponent implements OnInit {
   public filteredCards: ICards[] = [];
   ngOnInit(): void {
     this.filteredCards = this.cards;
-    this.hotelFilter='mot';
+    this.hotelFilter='';
   }
 
   private _hotelFilter: string = 'mot';
