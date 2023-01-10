@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 
+import {ICards} from './cards';
+
 @Component({
   selector: 'app-cards',
   templateUrl: 'cards.component.html',
 })
 export class CardsComponent {
   public title: string = 'Titre du card';
-  public cards: any[] = [
+  public cards: ICards[] = [
     {
       cardsId: 1,
       cardsName: 'Hotel1',
