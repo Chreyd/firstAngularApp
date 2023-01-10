@@ -49,4 +49,6 @@ export class CardsComponent {
     this.showBadge=!this.showBadge;
   }
 
+  public hotelFilter:string = 'mot';
+
 }

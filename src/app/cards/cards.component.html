@@ -1,26 +1,47 @@
-
-
 <div class="container">
-  <h2 *ngIf="cards && cards.length>0" >{{ title }}</h2>
+  <h2 *ngIf="cards && cards.length > 0">{{ title }}</h2>
 
-  <button class="btn btn-primary d-flex"  (click)="toggleBadge()">
-    <span class="material-icons">{{showBadge?'visibility_off':'visibility_on'}}</span>
-    <span class="ml-2">{{showBadge? 'Cacher':'Afficher'}} nouveau</span>
+  <button class="btn btn-primary d-flex" (click)="toggleBadge()">
+    <span class="material-icons">{{
+      showBadge ? "visibility_off" : "visibility_on"
+    }}</span>
+    <span class="ml-2">{{ showBadge ? "Cacher" : "Afficher" }} nouveau</span>
   </button>
 
-  <div class="row row-cols-1 row-cols-md-3">
-    <div class="col mb-4" *ngFor="let card of cards " >
-      <div class="card">
-        <img [src]='card.imageUrl' [title]="card.cardsName" class="card-img-top" [alt]="card.cardsName" />
-<!--         <img src='{{card.imageUrl}}' [title]="card.cardsName" class="card-img-top" [alt]="card.cardsName" /> -->        <div class="card-body">
-          <h5 class="card-title">{{card.cardsName}}</h5>
-          <p class="card-text">
-            {{card.description}}
-          </p>
-          <span class='badge badge-pill badge-info bg-info' *ngIf="showBadge">Nouveau</span>
+  <div class="my-2">
+    <div class="row">
+      <div class="col-md-4">
+        <span>Filtre actuel :</span>
+        <b> {{hotelFilter}} </b>
+      </div>
+      <div class="col-md-8 form-group">
+        <input type="text" class="from-control" [(ngModel)]="hotelFilter" />
+<!--         <input type="text" class="from-control" [ngModel]="hotelFilter" (ngModelChange)="hotelFilter=$event" /> -->      </div>
+    </div>
+  </div>
 
+  <!-- -------------------------CARD -->
+  <div class="row row-cols-1 row-cols-md-3">
+    <div class="col mb-4" *ngFor="let card of cards">
+      <div class="card">
+        <img
+          [src]="card.imageUrl"
+          [title]="card.cardsName"
+          class="card-img-top"
+          [alt]="card.cardsName"
+        />
+        <!--         <img src='{{card.imageUrl}}' [title]="card.cardsName" class="card-img-top" [alt]="card.cardsName" /> -->
+        <div class="card-body">
+          <h5 class="card-title">{{ card.cardsName }}</h5>
+          <p class="card-text">
+            {{ card.description }}
+          </p>
+          <span class="badge badge-pill badge-info bg-info" *ngIf="showBadge"
+            >Nouveau</span
+          >
         </div>
       </div>
     </div>
   </div>
+  <!-- --------------------------END CARD -->
 </div>
