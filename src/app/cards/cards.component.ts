@@ -4,7 +4,8 @@ import {ICards} from './cards';
 
 @Component({
   selector: 'app-cards',
-  templateUrl: 'cards.component.html',
+  templateUrl: './cards.component.html',
+  styleUrls: ['./cards.component.css']
 })
 export class CardsComponent implements OnInit{
  /*  ngOnInit(): void {
