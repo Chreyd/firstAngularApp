@@ -1,0 +1,17 @@
+<div class="container">
+  <h2 *ngIf="cards && cards.length>0" >{{ title }}</h2>
+
+  <div class="row row-cols-1 row-cols-md-3">
+    <div class="col mb-4" *ngFor="let card of cards " >
+      <div class="card">
+        <img src='{{card.imageUrl}}' class="card-img-top" alt="xxx" />
+        <div class="card-body">
+          <h5 class="card-title">{{card.cardsName}}</h5>
+          <p class="card-text">
+            {{card.description}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
