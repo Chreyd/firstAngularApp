@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import {ICards} from './cards';
 
@@ -6,8 +6,16 @@ import {ICards} from './cards';
   selector: 'app-cards',
   templateUrl: 'cards.component.html',
 })
-export class CardsComponent {
+export class CardsComponent implements OnInit{
+ /*  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  } */
+  ngOnInit(): void {
+      console.log('L\'initialization OnInit fonctionne');
+  }
+
   public title: string = 'Titre du card';
+
   public cards: ICards[] = [
     {
       cardsId: 1,
