@@ -7,7 +7,7 @@ import { Component } from "@angular/core";
 })
 
 export class AppComponent {
-  title: String= 'AppComponent';
+  title: String= 'Gestionnaire d\'Hôtels';
 }
 
 /* import { Component } from '@angular/core';
