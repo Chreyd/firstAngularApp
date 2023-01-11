@@ -14,6 +14,11 @@ export class CardsComponent implements OnInit {
 
   public title: string = 'Titre du card';
 
+  public receivedRatying: string | undefined;
+  public receiveRatyingClick(message:string): void{
+    this.receivedRatying= message;
+  }
+
   public cards: ICards[] = [
     {
       cardsId: 1,
