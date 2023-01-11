@@ -21,6 +21,7 @@ export class CardsComponent implements OnInit {
       description: 'vue de la première description',
       price: 660.5,
       imageUrl: '../../assets/image1.jpg',
+      rating: 3
     },
     {
       cardsId: 2,
@@ -28,6 +29,7 @@ export class CardsComponent implements OnInit {
       description: 'vue de la duxième description',
       price: 299.6,
       imageUrl: 'assets/image2.jpg',
+      rating: 2.5
     },
     {
       cardsId: 3,
@@ -35,6 +37,7 @@ export class CardsComponent implements OnInit {
       description: 'vue de la troisième description',
       price: 2090.5,
       imageUrl: 'assets/image3.jpg',
+      rating: 4.5
     },
     {
       cardsId: 4,
@@ -42,6 +45,7 @@ export class CardsComponent implements OnInit {
       description: 'vue de la quatrième description',
       price: 230.0,
       imageUrl: 'assets/image4.jpg',
+      rating: 4
     },
     {
       cardsId: 5,
@@ -49,6 +53,7 @@ export class CardsComponent implements OnInit {
       description: 'vue de la cinquième description',
       price: 28.5,
       imageUrl: 'assets/image5.jpg',
+      rating: 5
     },
   ];
   public showBadge: boolean = true;

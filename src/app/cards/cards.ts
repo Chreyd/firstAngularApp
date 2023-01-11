@@ -4,6 +4,7 @@ export interface ICards{
   description: string;
   price: number;
   imageUrl: string;
+  rating: number;
 
 }
 
