@@ -10,15 +10,18 @@ import localeFr from '@angular/common/locales/fr';
 import { ReplaceComma } from './shared/pipes/replaca-comma.pipe';
 /* import fr from '@angular/common/locales/fr';
  */
+import { StarRatingComponent } from './shared/components/star-rating/star-rating.component';
+
 registerLocaleData(localeFr, 'fr');
 @NgModule({
   declarations: [
     AppComponent,
     CardsComponent,
     ReplaceComma,
+    StarRatingComponent
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     FormsModule
   ],
   providers: [],
