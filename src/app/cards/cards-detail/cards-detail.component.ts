@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HotelListService } from '../cards.service';
 import { ICards } from './../cards';
 
@@ -12,8 +12,15 @@ export class CardsDetailComponent implements OnInit{
   constructor(
     private route: ActivatedRoute,
 
-    private hotelService: HotelListService
+    private hotelService: HotelListService,
+    private router: Router,
   ){}
+
+  public backToListe():void{
+    this.router.navigate([
+      '/hotels'
+    ])
+  }
 
     public hotel: ICards | undefined= <ICards>{};
 

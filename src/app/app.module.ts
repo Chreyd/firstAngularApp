@@ -15,6 +15,7 @@ import { StarRatingComponent } from './shared/components/star-rating/star-rating
 import { HomeComponent } from './home/home.component';
 import { CardsDetailComponent } from './cards/cards-detail/cards-detail.component';
 import { RouterModule } from '@angular/router';
+import { CardsDetailGuard } from './cards/cards-detail.guard';
 
 registerLocaleData(localeFr, 'fr');
 @NgModule({
@@ -33,7 +34,7 @@ registerLocaleData(localeFr, 'fr');
     RouterModule.forRoot([
       {path: 'home', component:HomeComponent},
       {path: '', redirectTo:'home', pathMatch: 'full'},
-      {path: 'hotel/:id', component:CardsDetailComponent},
+      {path: 'hotel/:id', component:CardsDetailComponent, canActivate: [CardsDetailGuard]},
       {path: 'hotels', component: CardsComponent},
       {path: '**', redirectTo:'home',pathMatch: 'full'},
     ]),
