@@ -12,6 +12,9 @@ import { ReplaceComma } from './shared/pipes/replaca-comma.pipe';
 /* import fr from '@angular/common/locales/fr';
  */
 import { StarRatingComponent } from './shared/components/star-rating/star-rating.component';
+import { HomeComponent } from './home/home.component';
+import { CardsDetailComponent } from './cards/cards-detail/cards-detail.component';
+import { RouterModule } from '@angular/router';
 
 registerLocaleData(localeFr, 'fr');
 @NgModule({
@@ -19,12 +22,21 @@ registerLocaleData(localeFr, 'fr');
     AppComponent,
     CardsComponent,
     ReplaceComma,
-    StarRatingComponent
+    StarRatingComponent,
+    HomeComponent,
+    CardsDetailComponent
   ],
   imports: [
   BrowserModule,
     FormsModule,
     HttpClientModule,
+    RouterModule.forRoot([
+      {path: 'home', component:HomeComponent},
+      {path: '', redirectTo:'home', pathMatch: 'full'},
+      {path: 'hotel/:id', component:CardsDetailComponent},
+      {path: 'hotels', component: CardsComponent},
+      {path: '**', redirectTo:'home',pathMatch: 'full'},
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]
