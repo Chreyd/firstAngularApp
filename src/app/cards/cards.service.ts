@@ -1,5 +1,8 @@
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable, throwError } from "rxjs";
 import { ICards } from './cards';
+import {catchError, tap} from 'rxjs/operators'
 
 
 @Injectable(
@@ -10,48 +13,30 @@ import { ICards } from './cards';
 
 export class HotelListService {
 
-  public getCards():ICards[] {
-    return [
-      {
-        cardsId: 1,
-        cardsName: 'Marrakech hotel',
-        description: 'vue de la première description',
-        price: 660.5,
-        imageUrl: '../../assets/image1.jpg',
-        rating: 3
-      },
-      {
-        cardsId: 2,
-        cardsName: 'Casablanca hotel',
-        description: 'vue de la duxième description',
-        price: 299.6,
-        imageUrl: 'assets/image2.jpg',
-        rating: 2.5
-      },
-      {
-        cardsId: 3,
-        cardsName: 'Settat hotel',
-        description: 'vue de la troisième description',
-        price: 2090.5,
-        imageUrl: 'assets/image3.jpg',
-        rating: 4.5
-      },
-      {
-        cardsId: 4,
-        cardsName: 'Rabat hotel',
-        description: 'vue de la quatrième description',
-        price: 230.0,
-        imageUrl: 'assets/image4.jpg',
-        rating: 4
-      },
-      {
-        cardsId: 5,
-        cardsName: 'Mohammedia hotel',
-        description: 'vue de la cinquième description',
-        price: 28.5,
-        imageUrl: 'assets/image5.jpg',
-        rating: 5
-      },
-    ];
+  private readonly HOTEL_API_URL= 'api/hotels.json'
+
+  constructor( private http: HttpClient ){
+
+  }
+
+  public getCards(): Observable<ICards[]> {
+    return this.http.get<ICards[]>(this.HOTEL_API_URL).pipe(
+      tap(cards => console.log('hotels', cards)),
+      catchError(this.handleError)
+    )
+  }
+
+  private handleError(error: HttpErrorResponse) {
+    if (error.status === 0) {
+      // A client-side or network error occurred. Handle it accordingly.
+      console.error('An error occurred:', error.error);
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong.
+      console.error(
+        `Backend returned code ${error.status}, body was: `, error.error);
+    }
+    // Return an observable with a user-facing error message.
+    return throwError(() => new Error('Something bad happened; please try again later.'));
   }
 }

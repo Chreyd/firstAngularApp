@@ -4,6 +4,7 @@ import { CardsComponent } from './cards/cards.component';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http'
 
 import {registerLocaleData} from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
@@ -22,7 +23,8 @@ registerLocaleData(localeFr, 'fr');
   ],
   imports: [
   BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

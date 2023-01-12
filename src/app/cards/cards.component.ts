@@ -16,6 +16,7 @@ export class CardsComponent implements OnInit {
   public title: string = 'Titre du card';
 
   public receivedRatying: string | undefined;
+  public errorMsg: any;
   public receiveRatyingClick(message:string): void{
     this.receivedRatying= message;
   }
@@ -32,9 +33,16 @@ export class CardsComponent implements OnInit {
 
   public filteredCards: ICards[] = [];
   ngOnInit(): void {
-    this.filteredCards = this.cards;
     this.hotelFilter='';
-    this.cards=this.hotelListService.getCards();
+    this.hotelListService.getCards().subscribe({
+      next: cards=> {
+        this.cards = cards;
+        this.filteredCards = this.cards;
+
+      },
+      error: err => this.errorMsg = err
+    }
+    );
   }
 
   private _hotelFilter: string = 'mot';
