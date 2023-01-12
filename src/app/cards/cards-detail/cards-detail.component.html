@@ -1,1 +1,36 @@
-<p>cards-detail works!</p>
+<div class="container">
+  <!-- -------------------------CARD -->
+  <div class="row row-cols-1 row-cols-md-3">
+    <div class="col mb-4" >
+      <div class="card">
+        <img
+          [src]="hotel?.imageUrl"
+          [title]="hotel?.cardsName"
+          class="card-img-top"
+          [alt]="hotel?.cardsName"
+        />
+        <!--         <img src='{{card.imageUrl}}' [title]="card.cardsName" class="card-img-top" [alt]="card.cardsName" /> -->
+        <div class="card-body">
+          <h5 class="card-title">{{ hotel?.cardsName | uppercase }}</h5>
+          <p class="card-text">
+            {{ hotel?.description }}
+          </p>
+          <p class="card-text">
+            {{hotel?.price | currency: 'EUR': 'symbol': '1.2-2':'fr' | replaceComma }}
+          </p>
+
+          <div class="d-flex justify-content-between align-items-baseline">
+
+            <span class="material-icons bg-success text-white p-2 rounded-circle btn"
+            [routerLink]="['/hotel', hotel?.cardsId]">
+              keyboard_arrow_right
+            </span>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- --------------------------END CARD -->
+</div>
