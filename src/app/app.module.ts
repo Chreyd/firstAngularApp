@@ -12,6 +12,7 @@ import localeFr from '@angular/common/locales/fr';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { CardsModule } from './les-cards/cards.module';
+import { AppRootingModule } from './app-rooting.module';
 
 registerLocaleData(localeFr, 'fr');
 @NgModule({
@@ -24,14 +25,13 @@ registerLocaleData(localeFr, 'fr');
   BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      {path: 'home', component:HomeComponent},
-      {path: '', redirectTo:'home', pathMatch: 'full'},
-      {path: '**', redirectTo:'home',pathMatch: 'full'},
-    ]),
+
     CardsModule,
+    AppRootingModule
+
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

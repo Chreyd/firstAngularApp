@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
 import { ReplaceComma } from './pipes/replaca-comma.pipe';
 import { StarRatingComponent } from './components/star-rating/star-rating.component';
 

@@ -4,6 +4,7 @@ import { CardsDetailComponent } from './cards-details/cards-detail.component';
 import { RouterModule } from '@angular/router';
 import { CardsDetailGuard } from './shared/guards/cards-detail.guard';
 import { SharedModule } from '../shared/shared.module';
+import { CardsRootingModule } from './cards-rooting.module';
 
 
 
@@ -15,10 +16,7 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
 
-    RouterModule.forChild([
-      {path: 'hotel/:id', component:CardsDetailComponent, canActivate: [CardsDetailGuard]},
-      {path: 'hotels', component: CardsComponent},
-    ]),
+    CardsRootingModule,
     SharedModule,
   ]
 })
