@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ICards } from './cards';
-import { HotelListService } from './cards.service';
+import { ICards } from '../shared/models/cards';
+import { HotelListService } from '../shared/services/cards.service';
 
 @Component({
   selector: 'app-cards',

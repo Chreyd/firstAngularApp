@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, throwError } from "rxjs";
-import { ICards } from './cards';
+import { ICards } from '../models/cards';
 import {catchError, tap} from 'rxjs/operators'
 
 
